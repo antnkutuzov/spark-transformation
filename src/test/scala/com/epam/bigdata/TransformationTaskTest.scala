@@ -4,8 +4,11 @@ import java.util
 
 import org.apache.spark.sql.types.{IntegerType, StructField, StructType}
 import org.apache.spark.sql.{SparkSession, _}
+import org.junit.runner.RunWith
 import org.scalatest.funsuite.AnyFunSuite
+import org.scalatestplus.junit.JUnitRunner
 
+@RunWith(classOf[JUnitRunner])
 class TransformationTaskTest extends AnyFunSuite {
 
   test("Test transformation expedia data") {

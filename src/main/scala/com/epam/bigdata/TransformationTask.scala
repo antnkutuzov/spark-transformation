@@ -3,7 +3,7 @@ package com.epam.bigdata
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions.col
 
-object StreamingTask {
+object TransformationTask {
 
   def main(args: Array[String]): Unit = {
 
@@ -28,7 +28,7 @@ object StreamingTask {
       .load("hdfs://host.docker.internal:9000/expedia")
   }
 
-  private def addColumnLargeFamily(expediaData: DataFrame): DataFrame = {
+  def addColumnLargeFamily(expediaData: DataFrame): DataFrame = {
     expediaData
       .where("srch_children_cnt > 0")
       .withColumn("large_family", col("srch_children_cnt").gt(2))

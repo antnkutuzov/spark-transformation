@@ -36,6 +36,14 @@
             <artifactId>spark-sql_2.11</artifactId>
             <version>${skark.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.scalatest</groupId>
+            <artifactId>scalatest_2.11</artifactId>
+            <version>3.2.3</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -85,7 +93,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>com.epam.bigdata.StreamingTask</mainClass>
+                            <mainClass>com.epam.com.epam.bigdata.TransformationTask</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

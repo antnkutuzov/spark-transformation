@@ -15,6 +15,7 @@ class TransformationTaskTest extends AnyFunSuite {
     val sparkSession = SparkSession.builder()
       .master("local")
       .appName("ExpediaTransformationTest")
+      .config("spark.driver.memory", "471859200")
       .getOrCreate()
 
     val result = TransformationTask.addColumnLargeFamily(expediaData(sparkSession))

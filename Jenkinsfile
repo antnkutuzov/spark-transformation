@@ -8,7 +8,9 @@ pipeline {
         }
         stage("build code") {
             steps {
-                sh "mvn clean install -DskipTests=true"
+                withMaven(maven : 'maven') {
+                    sh "mvn clean install -DskipTests=true"
+                }
                 script {
                     env.BUILD_SUCCESS = true
                 }
@@ -20,7 +22,9 @@ pipeline {
                 value: "true"
             }
             steps {
-                sh "mvn test"
+                withMaven(maven : 'maven') {
+                    sh "mvn test"
+                }
             }
         }
     }
